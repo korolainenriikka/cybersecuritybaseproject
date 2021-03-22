@@ -3,9 +3,22 @@
   <head>
     <title>Teetietokanta!</title>
   </head>
-  <body>
+  <body style="margin-left: 30px">
     <h1>Lisää uusi tee:</h1>
-    <p>jes joo tänne teen lisäys</p>
+    <form action="{% url 'teet:submitnew' %}" method="post">
+      {% csrf_token %}
+      <div>
+        <label for="name">Teen nimi:</label><br>
+        <input type="text" name="name" id="name"><br>
+      </div>
+      
+      <div>
+        <label for="description">Kuvaus teestä:</label><br>
+        <textarea Name="description" rows="15" COLS="40"></textarea>
+      </div>
+      
+      <input type="submit" value="Tallenna">
+    </form>
     <a href="{% url 'teet:index' %} ">Takaisin</a>
   </body>
 </html>

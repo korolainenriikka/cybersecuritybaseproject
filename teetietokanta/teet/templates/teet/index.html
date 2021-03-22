@@ -3,10 +3,19 @@
   <head>
     <title>Teetietokanta!</title>
   </head>
-  <body>
+  <body style="margin-left: 30px">
     <h1>Teearviot:</h1>
-    <a href="{% url 'teet:addnew' %} ">Lisää</a><br/>
-    <a href="/admin/">Kirjaudu ylläpitoon</a>
-    <p>jes joo tänne teet</p>
+    <nav>
+      <a href="{% url 'teet:addnew' %} ">Lisää</a><br/>
+      <a href="/admin/">Kirjaudu ylläpitoon</a>
+    </nav>
+    <div style="max-width: 300px;">
+      {% for tea in teas %}
+        <article>
+          <h2><strong>{{ tea.name }}</strong></h2>
+          <p>{{ tea.description }}</p>
+        </article>
+      {% endfor %}
+    </div>
   </body>
 </html>
