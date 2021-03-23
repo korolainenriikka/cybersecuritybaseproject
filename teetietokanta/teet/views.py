@@ -4,6 +4,8 @@ from django.urls import reverse
 
 from .models import Tea
 
+import sqlite3
+
 def index(request):
     teas = Tea.objects.all()
     context = {
@@ -20,6 +22,10 @@ def submitNew(request):
 
     if len(name) == 0 or len(description) == 0:
         return render(request, 'teet/addnew.html')
-        
-    newTea = Tea.objects.create(name=name, description=description)
+
+    conn = sqlite3.connect('db.sqlite3')
+    cursor = conn.cursor()
+    response = cursor.executescript("INSERT INTO teet_tea(name, description) VALUES('"+ name +"', '"+ description + "');")
+    conn.commit()
+		#Tea.objects.create(name=name, description=description)
     return HttpResponseRedirect(reverse('teet:index'))
