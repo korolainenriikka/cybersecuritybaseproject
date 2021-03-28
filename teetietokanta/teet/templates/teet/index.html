@@ -13,7 +13,7 @@
       {% for tea in teas %}
         <article>
           <h2><strong>{{ tea.name }}</strong></h2>
-          <p>{{ tea.description }}</p>
+          <p>{{ tea.description | safe}}</p>
         </article>
       {% endfor %}
     </div>

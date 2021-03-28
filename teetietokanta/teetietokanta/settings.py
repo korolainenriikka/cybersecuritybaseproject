@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'blackhatbase.apps.BlackhatbaseConfig',
     'teet.apps.TeetConfig',
     'django.contrib.admin',
     'django.contrib.auth',

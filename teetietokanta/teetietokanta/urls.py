@@ -18,5 +18,6 @@ from django.urls import include, path
 
 urlpatterns = [
     path('', include('teet.urls')),
+    path('blackhat/', include('blackhatbase.urls')),
     path('admin/', admin.site.urls),
 ]
