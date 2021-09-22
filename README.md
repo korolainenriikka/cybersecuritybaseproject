@@ -5,7 +5,7 @@ Project / flaw descriptions:
 
 LINK: https://github.com/korolainenriikka/cybersecuritybaseproject
 
-No specific installations / db migrations needed. Clone the project, cd to cybersecuritybaseproject/teetietokanta and run ```python3 manage.py runserver```. The app launches in (http://localhost:8000/)[http://localhost:8000/].
+No specific installations / db migrations needed. Clone the project, cd to cybersecuritybaseproject/teetietokanta and run ```python3 manage.py runserver```. The app launches in [http://localhost:8000/](http://localhost:8000/).
 
 a note on testing the injections below (flaws 1-3): the injections are highly dependent on the quote types used, be careful with copy-pasting. The exact working injection is inside the double quotes.
 
